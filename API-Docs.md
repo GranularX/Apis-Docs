@@ -158,3 +158,95 @@ Source for User Management System
     ```
 
 TODO: Add Service passwords to endpoints that are not accessible to clients but other services  -->
+
+
+# Mailbox End
+Backend for Mailbox, <baseUrl = bmailbox.granularx.com>
+
+
+## /create
+
+- **Method:** POST 
+- **Description:** Used for creating a new mailbox
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "owner_id":"",
+        "pin": ""
+    }
+    ```
+
+
+## /login
+
+- **Method:** POST 
+- **Description:** Used for logging in to a new mailbox
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "owner_id":"",
+        "pin": ""
+    }
+    ```
+
+## /mailbox
+
+- **Method:** GET 
+- **Description:** Used for getting a mailbox
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "owner_id":"",
+        "mail_id":"",
+        "pin": ""
+    }
+    ```
+
+
+## /mailbox
+
+- **Method:** PUT
+- **Description:** Used for updating a mailbox with new message
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "owner_id":"",
+        "mail_id":"",
+        "message_header":"",
+        "message_body":"",
+        "message_type":""
+    }
+    ```
+## /message
+
+- **Method:** POST
+- **Description:** Used for creating a new message
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "owner_id": "",
+        "mail_id": "",
+        "message_header":"",
+        "message_body":"",
+        "message_type":""
+    }
+    ```
+
+## /events?stream=<user_id>
+
+- **Method:** GET
+- **Description:** Used for creating a stream for events notification per client
+- **JSON Request Format/Params:**
+    ```
+
+    ```
+
+## /trigger/:id
+
+- **Method:** GET
+- **Description:** Used to trigger a notification on a client stream
+- **JSON Request Format/Params:**
+    ```
+    ```
+
+TODO: Add Service passwords to endpoints that are not accessible to clients but other services 
