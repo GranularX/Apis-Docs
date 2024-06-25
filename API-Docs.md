@@ -11,6 +11,7 @@ Source for User Management System
 
 - **Method:** POST 
 - **Description:** Used for sigining in a user into their account
+- **Query String:** platform=web or platform=mobile
 - **JSON Request Format/Params:**
     ```json
     {
