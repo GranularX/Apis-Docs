@@ -295,3 +295,34 @@ Recent API for authentication on Gx Finance, <baseUrl = www.granularx.com/auth>
     ```
 
  
+## /signin?
+
+- **Method:** POST 
+- **Description:** Used for creating a signing a user
+- **Query Parameter:** platform =  web | mobile
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "uns":""<string>,
+    	"password":""<string>,
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	"status": "SUCCESS",
+    	"error": "",
+    	"data": "user signed in successfully"
+    }
+    ```
+
+- **JSON Response Failed (user not signed in):** 
+	 ```json
+    {
+         "status": "FAILED",
+   	 "error": "not found",
+    	 "data": "oops, it appears you are not signed up yet"
+    }
+    ```
+
+ 
