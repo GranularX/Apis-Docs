@@ -251,3 +251,52 @@ Backend for Mailbox, <baseUrl = bmailbox.granularx.com>
     ```
 
 TODO: Add Service passwords to endpoints that are not accessible to clients but other services 
+
+# New Auth
+Recent API for authentication on Gx Finance, <baseUrl = www.granularx.com/auth>
+
+
+## /signup
+
+- **Method:** POST 
+- **Description:** Used for creating a new user
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "username":""<string>,
+        "position": ""<string>,
+    	"identifier":""<string>,
+	"phone_number":""<string>,
+    	"password":""<string>,
+    	"pin": <int>,
+
+
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+       "status": "SUCCESS",
+    "error": "",
+    "data": "user successfully created"
+
+
+    }
+    ```
+
+**JSON Response Failed (user already exists):** 
+	 ```json
+    {
+       "status": "FAILED",
+    "error": "user already exists",
+    "data": [
+        "Jason.XL.frantic",
+        "Jason.XLVII.awesome",
+        "Jason.XVI.gorgeous"
+    ],
+
+
+    }
+    ```
+
+ 
