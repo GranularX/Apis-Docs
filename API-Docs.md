@@ -277,25 +277,20 @@ Recent API for authentication on Gx Finance, <baseUrl = www.granularx.com/auth>
 	 ```json
     {
        "status": "SUCCESS",
-    "error": "",
-    "data": "user successfully created"
-
-
+       "error": "",
+       "data": "user successfully created"
     }
     ```
 
-**JSON Response Failed (user already exists):** 
+- **JSON Response Failed (user already exists):** 
 	 ```json
     {
        "status": "FAILED",
-    "error": "user already exists",
-    "data": [
+       "error": "user already exists",
+       "data": [
         "Jason.XL.frantic",
         "Jason.XLVII.awesome",
-        "Jason.XVI.gorgeous"
-    ],
-
-
+        "Jason.XVI.gorgeous",
     }
     ```
 
