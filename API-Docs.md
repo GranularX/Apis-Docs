@@ -253,7 +253,7 @@ Backend for Mailbox, <baseUrl = bmailbox.granularx.com>
 TODO: Add Service passwords to endpoints that are not accessible to clients but other services 
 
 # New Auth
-Recent API for authentication on Gx Finance, <baseUrl = www.granularx.com/auth>
+Recent API for authentication on Gx Finance, <baseUrl = api.granularx.com/auth>
 
 
 ## /signup
