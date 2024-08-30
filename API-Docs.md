@@ -326,3 +326,127 @@ Recent API for authentication on Gx Finance, <baseUrl = api.granularx.com/auth>
     ```
 
  
+# Wallet Topup	
+For Wallet topup , <baseUrl = api.granularx.com/wallet>
+
+ 
+## /topup
+
+- **Method:** POST 
+- **Description:** Used for topup-ing wallet via external pssp
+- **Query Parameter:** type =  base | peer
+- **JSON Request Format/Params:**
+    ```json
+    {
+       "amount":<float64>,
+       "uns":<string>,
+    	"base_currency":e.g "NGN" <string>,
+    	"transaction_type":e.g "base" <string>,
+    	"pin":1234
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": {
+        	"access_code": e.g "eku5qwtqq496nja" <string>,
+        	"auth_url": "https://checkout.paystack.com/eku5qwtqq496nja" <string> ,
+        	"reference": "2bb52u5ayo" <string>
+  	}
+    }
+    ```
+## /topup/verfiy/:reference
+
+- **Method:** GET
+- **Description:** Used for verify that topup action was successful
+- **JSON Response Success:** 
+	 ```json
+    {
+     	{
+    "status": "SUCCESS",
+    "error": "",
+    "data": {
+        "id": 4127098325,
+        "domain": "test",
+        "status": "success",
+        "reference": "api8yn6no5",
+        "receipt_number": null,
+        "amount": 23333,
+        "message": null,
+        "gateway_response": "Successful",
+        "paid_at": "2024-08-30T11:00:43.000Z",
+        "created_at": "2024-08-30T11:00:07.000Z",
+        "channel": "card",
+        "currency": "NGN",
+        "ip_address": "102.88.68.165",
+        "metadata": "",
+        "log": {
+            "start_time": 1725015637,
+            "time_spent": 6,
+            "attempts": 1,
+            "errors": 0,
+            "success": true,
+            "mobile": false,
+            "input": [],
+            "history": [
+                {
+                    "type": "action",
+                    "message": "Attempted to pay with card",
+                    "time": 3
+                },
+                {
+                    "type": "success",
+                    "message": "Successfully paid with card",
+                    "time": 6
+                }
+            ]
+        },
+        "fees": 350,
+        "fees_split": null,
+        "authorization": {
+            "authorization_code": "AUTH_ry3o1myjqp",
+            "bin": "408408",
+            "last4": "4081",
+            "exp_month": "12",
+            "exp_year": "2030",
+            "channel": "card",
+            "card_type": "visa ",
+            "bank": "TEST BANK",
+            "country_code": "NG",
+            "brand": "visa",
+            "reusable": true,
+            "signature": "SIG_U63UIVzALNsppiMUbvVc",
+            "account_name": null
+        },
+        "customer": {
+            "id": 183585503,
+            "first_name": null,
+            "last_name": null,
+            "email": "jason@gmail.com",
+            "customer_code": "CUS_yunmbk7a5fqayx1",
+            "phone": null,
+            "metadata": null,
+            "risk_action": "default",
+            "international_format_phone": null
+        },
+        "plan": null,
+        "split": {},
+        "order_id": null,
+        "requested_amount": 23333,
+        "pos_transaction_data": null,
+        "source": null,
+        "fees_breakdown": null,
+        "connect": null,
+        "transaction_date": "2024-08-30T11:00:07.000Z",
+        "plan_object": {},
+        "subaccount": {}
+    }
+}
+    }
+    ```
+
+
+
+
