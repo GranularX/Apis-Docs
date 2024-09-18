@@ -325,6 +325,25 @@ Recent API for authentication on Gx Finance, <baseUrl = api.granularx.com/auth>
     	 "data": "oops, it appears you are not signed up yet"
     }
     ```
+## /verify-email
+
+- **Method:** POST 
+- **Description:** Used for verifying user email
+- **JSON Request Format/Params:**
+    ```json
+    {
+        "email":""<string>,
+    	"otp":""<string>,
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	"status": "SUCCESS",
+    	"error": "",
+    	"data": "user email verified successfully"
+    }
+    ```
 
  
 # Wallet Topup	
