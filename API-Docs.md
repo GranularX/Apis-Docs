@@ -267,6 +267,7 @@ Recent API for authentication on Gx Finance, <baseUrl = api.granularx.com/auth>
         "position": ""<string>,
     	"identifier":""<string>,
 	"phone_number":""<string>,
+    	"email": ""<string>,
     	"password":""<string>,
     	"pin": <int>,
 
