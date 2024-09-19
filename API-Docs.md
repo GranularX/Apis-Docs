@@ -299,12 +299,14 @@ Recent API for authentication on Gx Finance, <baseUrl = api.granularx.com/auth>
 ## /signin?
 
 - **Method:** POST 
-- **Description:** Used for creating a signing a user
+- **Description:** Used for signing in a user via uns or email
 - **Query Parameter:** platform =  web | mobile
 - **JSON Request Format/Params:**
     ```json
     {
         "uns":""<string>,
+    	OR
+    	"email":""<string>,
     	"password":""<string>,
     }
     ```
