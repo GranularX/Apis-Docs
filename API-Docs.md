@@ -360,7 +360,8 @@ For Wallet topup , <baseUrl = api.granularx.com/wallet>
 - **JSON Request Format/Params:**
     ```json
     {
-       "amount":<float64>,
+       "amount":<int>
+    	"email":""<string>,
        "uns":<string>,
     	"base_currency":e.g "NGN" <string>,
     	"transaction_type":e.g "base" <string>,
