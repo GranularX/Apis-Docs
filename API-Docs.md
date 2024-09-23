@@ -614,9 +614,15 @@ For Chat Rest endpoints , <baseUrl = api.granularx.com/chat>
 - **JSON Response Success:** 
 	 ```json
     {
-     	 "status": "SUCCESS" <string>,
-   	 "error": "" <string>,
-    	"data": []
+     	 "status": "SUCCESS",
+    "error": "",
+    "data": {
+  	// example response data
+        "id": "64939e38-841f-4ac5-87bb-02b13401b1ca",
+        "p_1": "Chuks.III.King",
+        "p_2": "Fem.I.Cool",
+        "message": []
+    }
     }
     ```
 
