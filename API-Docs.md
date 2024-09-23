@@ -520,5 +520,109 @@ For In Chat payment , <baseUrl = api.granularx.com/fiatons>
     }
     ```
 
+## /view/<uns>
+
+- **Method:** GET
+- **Description:** Used for getting the fiatons from a user walet
+- **JSON Request Format/Params:**
+
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": []
+    }
+    ```
+
+
+
+
+  # Chat REST endpoints	
+For Chat Rest endpoints , <baseUrl = api.granularx.com/chat>
+## /create
+
+- **Method:** POST 
+- **Description:** Used for creating a new chat session
+- **JSON Request Format/Params:**
+    ```json
+    {
+      "p_1":"use UNS here <string>",
+      "p_2":"use UNS here <string>",
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": "success"
+    }
+    ```
+
+
+## /friends
+
+- **Method:** POST 
+- **Description:** Used get all friends of a user
+- **JSON Request Format/Params:**
+    ```json
+    {
+      "uns":"use UNS here <string>",
+      
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": []
+    }
+    ```
+
+## /add
+
+- **Method:** POST 
+- **Description:** Used for adding a new friend by uns
+- **JSON Request Format/Params:**
+    ```json
+    {
+      "uns":"use UNS here <string>",
+      "friend_uns":"use UNS here <string>",
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": "success"
+    }
+    ```
+
+## /?id=<string>
+
+- **Method:** GET
+- **Description:** Used for fetching a chat
+- **JSON Request Format/Params:**
+    ```json
+    {
+     
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": []
+    }
+    ```
+
+
+
+
+
 
 
