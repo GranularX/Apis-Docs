@@ -497,4 +497,28 @@ For In Chat payment , <baseUrl = api.granularx.com/wallet>
     ```
 
 
+# In Chat payment using Fiaton service	
+For In Chat payment , <baseUrl = api.granularx.com/fiatons>
+## /send/peer
+
+- **Method:** POST 
+- **Description:** Used for sending fiatons to a peer in chat
+- **JSON Request Format/Params:**
+    ```json
+    {
+      "sender_wallet_id":"use UNS here <string>",
+      "receiver_wallet_id":"use UNS here <string>",
+      "amount":"e.g 100 <int>"
+    }
+    ```
+- **JSON Response Success:** 
+	 ```json
+    {
+     	 "status": "SUCCESS" <string>,
+   	 "error": "" <string>,
+    	"data": "success"
+    }
+    ```
+
+
 
