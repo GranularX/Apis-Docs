@@ -308,3 +308,354 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 
 ---
 
+# GranularX API Documentation - Verse Endpoints
+
+This section of the API documentation outlines the endpoints related to **Verses**, including content, product, and service management within a verse.
+
+---
+
+## Base URL
+
+- **Verse API**: `https://api.granularx.com/verse`
+
+### **Create a Verse**
+
+- **Endpoint**: `/verse/create`
+- **Method**: `POST`
+- **Description**: Creates a new verse.
+- **Request Body**:
+    ```json
+    {
+        "uns": "<string>",
+        "cta_title": "<string>",
+        "header_banner_url": "<string>",
+        "header_title": "<string>",
+        "header_description": "<string>",
+        "sector": "<string>",
+        "type": "<string>"
+    }
+    ```
+- **Success Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "<verse_id>"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Get a Verse**
+
+- **Endpoint**: `/verse/:uns`
+- **Method**: `GET`
+- **Description**: Retrieves the details of a verse by its UNS (Unique Name Space).
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": {
+            "id": "<string>",
+            "uns": "<string>",
+            "verse_header": {
+                "cta_title": "<string>",
+                "header_banner_url": "<string>",
+                "header_title": "<string>",
+                "header_description": "<string>"
+            },
+            "type": "<string>",
+            "verse_products": [...],
+            "verse_services": [...],
+            "verse_content": [...],
+            "has_softservant": true,
+            "has_mailbox": true,
+            "sector": "<string>"
+        }
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Delete a Verse**
+
+- **Endpoint**: `/verse/:uns`
+- **Method**: `DELETE`
+- **Description**: Deletes a verse by its UNS.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Verse deleted successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+## Content Management
+
+### **Add Content to Verse**
+
+- **Endpoint**: `/verse/contents/add/:verse_id`
+- **Method**: `POST`
+- **Description**: Adds new content to a verse.
+- **Request Body**:
+    ```json
+    {
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>"
+    }
+    ```
+- **Success Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "successfully added content to verse"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Get Content by ID**
+
+- **Endpoint**: `/verse/contents/:verse_id/:content_id`
+- **Method**: `GET`
+- **Description**: Retrieves content by its ID within a specific verse.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": { ... } // Content details
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Update Content**
+
+- **Endpoint**: `/verse/contents/:verse_id`
+- **Method**: `PUT`
+- **Description**: Updates content within a verse by its ID.
+- **Request Body**:
+    ```json
+    {
+        "id": "<string>",
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Content updated successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Delete Content**
+
+- **Endpoint**: `/verse/contents/:verse_id/:content_id`
+- **Method**: `DELETE`
+- **Description**: Deletes content from a verse by its ID.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Content deleted successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+## Product Management
+
+### **Add Product to Verse**
+
+- **Endpoint**: `/verse/products/add/:verse_id`
+- **Method**: `POST`
+- **Description**: Adds a new product to a verse.
+- **Request Body**:
+    ```json
+    {
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>",
+        "quantity": "<int>"
+    }
+    ```
+- **Success Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "successfully added product to verse"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Get Product by ID**
+
+- **Endpoint**: `/verse/products/:verse_id/:product_id`
+- **Method**: `GET`
+- **Description**: Retrieves a product by its ID within a specific verse.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": { ... } // Product details
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Update Product**
+
+- **Endpoint**: `/verse/products/:verse_id`
+- **Method**: `PUT`
+- **Description**: Updates a product within a verse by its ID.
+- **Request Body**:
+    ```json
+    {
+        "id": "<string>",
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>",
+        "quantity": "<int>"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Product updated successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Delete Product**
+
+- **Endpoint**: `/verse/products/:verse_id/:product_id`
+- **Method**: `DELETE`
+- **Description**: Deletes a product from a verse by its ID.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Product deleted successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+## Service Management
+
+### **Add Service to Verse**
+
+- **Endpoint**: `/verse/services/add/:verse_id`
+- **Method**: `POST`
+- **Description**: Adds a new service to a verse.
+- **Request Body**:
+    ```json
+    {
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>"
+    }
+    ```
+- **Success Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "successfully added service to verse"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Get Service by ID**
+
+- **Endpoint**: `/verse/services/:verse_id/:service_id`
+- **Method**: `GET`
+- **Description**: Retrieves a service by its ID within a specific verse.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": { ... } // Service details
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Update Service**
+
+- **Endpoint**: `/verse/services/:verse_id`
+- **Method**: `PUT`
+- **Description**: Updates a service within a verse by its ID.
+- **Request Body**:
+    ```json
+    {
+        "id": "<string>",
+        "title": "<string>",
+        "description": "<string>",
+        "price": "<float>"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Service updated successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+---
+
+### **Delete Service**
+
+- **Endpoint**: `/verse/services/:verse_id/:service_id`
+- **Method**: `DELETE`
+- **Description**: Deletes a service from a verse by its ID.
+- **Response**:
+    ```json
+    {
+        "status": "SUCCESS",
+        "error": "",
+        "data": "Service deleted successfully"
+    }
+    ```
+- **Status Code**: `200 OK`
+
+
