@@ -320,9 +320,10 @@ This section of the API documentation outlines the endpoints related to **Verses
 
 ### **Create a Verse**
 
-- **Endpoint**: `/verse/create`
+- **Endpoint**: `/create`
 - **Method**: `POST`
 - **Description**: Creates a new verse.
+- **Side Note**: Endpoint expects an image, where form input must be equal to "file"
 - **Request Body**:
     ```json
     {
@@ -332,7 +333,7 @@ This section of the API documentation outlines the endpoints related to **Verses
         "header_title": "<string>",
         "header_description": "<string>",
         "sector": "<string>",
-        "type": "<string>"
+        "vtype": "<string>"
     }
     ```
 - **Success Response**:
@@ -349,7 +350,7 @@ This section of the API documentation outlines the endpoints related to **Verses
 
 ### **Get a Verse**
 
-- **Endpoint**: `/verse/:uns`
+- **Endpoint**: `/:uns`
 - **Method**: `GET`
 - **Description**: Retrieves the details of a verse by its UNS (Unique Name Space).
 - **Response**:
@@ -382,7 +383,7 @@ This section of the API documentation outlines the endpoints related to **Verses
 
 ### **Delete a Verse**
 
-- **Endpoint**: `/verse/:uns`
+- **Endpoint**: `/:uns`
 - **Method**: `DELETE`
 - **Description**: Deletes a verse by its UNS.
 - **Response**:
