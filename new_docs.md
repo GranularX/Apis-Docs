@@ -497,7 +497,7 @@ This section of the API documentation outlines the endpoints related to **Verses
     {
         "title": "<string>",
         "description": "<string>",
-        "price": "<float>",
+        "price": "<uint>",
         "quantity": "<int>"
     }
     ```
