@@ -660,3 +660,32 @@ This section of the API documentation outlines the endpoints related to **Verses
 - **Status Code**: `200 OK`
 
 
+
+# GranularX API Documentation - Chat Socket endpoints
+
+This section of the API documentation outlines the endpoints related to **Real time chat**
+
+---
+
+## Base URL
+
+- **Socket API**: `https://socket.granularx.com/`
+- **To connect**: `wss://socket.granularx.com/ws/<uns>`
+
+## Send Message
+- **Request Body**:
+    ```json
+    {
+       "action":"send-message",
+       "username":<uns of receipient>,
+       "message":""
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "action":"send-message",
+      "message":""
+    }
+    ```
+
