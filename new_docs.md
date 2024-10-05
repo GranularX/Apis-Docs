@@ -307,6 +307,34 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 - **Status Code**: `200 OK`
 
 ---
+### **/chat/history/:chatID**
+
+- **Method**: `POST`
+- **Deriving ChatID**- ChatID is gotten from concatenating the two participants UNS e.g Bard.V.Smart-Jason.III.Learner
+- **Description**: Retrieves chat history for participants.
+
+
+
+- **Response**:
+      ```json
+      {
+          "status": "SUCCESS",
+          "error": "",
+          "data": { 
+                "chat_id":"string",
+                "message":[
+                      "sender":<string>,
+                      "recipient":<string>.
+                      "content":<string>,
+                      "timestamp":<string>,
+  ]}
+      }
+      ```
+
+- **Status Code**: `200 OK`
+
+---
+
 
 # GranularX API Documentation - Verse Endpoints
 
