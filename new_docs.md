@@ -40,6 +40,105 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 
 ---
 
+### **/auth/resend-otp**
+
+- **Method**: `POST`
+- **Description**: for resending OTPs for authentication purposes.
+  
+- **Request Body**:
+    ```json
+    {
+        "email":<string>,
+        "username": "<string> is the first part of a UNS",
+    }
+    ```
+
+- **Response**:
+    ```json
+    {
+    	"metadata": {
+    		"hash_token": "",
+    		"is_hash_token_new": false,
+    		"req_id": "",
+    		"req_time": 0,
+    		"stop_counter": 0
+    	},
+    	"status": "SUCCESS",
+    	"error": "",
+    	"data": "OTP resent successfully"
+    }
+    ```
+- **Status Code**: `200 Ok`
+
+---
+
+### **/auth/reset-password?reset_type**
+
+- **Method**: `POST`
+- **Query Params**: reset_type=url/ reset_type=otp, default is otp
+- **Description**: for sending reset password otp/urls to user mailbox.
+  
+- **Request Body**:
+    ```json
+    {
+        "email":<string>
+    }
+    ```
+
+- **Response**:
+    ```json
+    {
+    	"metadata": {
+    		"hash_token": "",
+    		"is_hash_token_new": false,
+    		"req_id": "",
+    		"req_time": 0,
+    		"stop_counter": 0
+    	},
+    	"status": "SUCCESS",
+    	"error": "",
+    	"data": <updating>
+    }
+    ```
+- **Status Code**: `200 Ok`
+
+---
+### **/auth/confirm-reset-password**
+
+- **Method**: `POST`
+- **Description**: for confirming password reset token sent to user email.
+  
+- **Request Body**:
+    ```json
+    {
+        "email":<string>,
+        "token": "<string>",
+    }
+    ```
+
+- **Response**:
+    ```json
+    {
+    	"metadata": {
+    		"hash_token": "",
+    		"is_hash_token_new": false,
+    		"req_id": "",
+    		"req_time": 0,
+    		"stop_counter": 0
+    	},
+    	"status": "SUCCESS",
+    	"error": "",
+    	"data": "OTP resent successfully"
+    }
+    ```
+- **Status Code**: `200 Ok`
+
+---
+
+
+
+
+
 ### **/auth/signup**
 
 - **Method**: `POST`
@@ -65,6 +164,13 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 - **Status Code**: `201 Created`
 
 ---
+
+
+
+
+
+
+
 
 ## Transactions
 
@@ -225,6 +331,71 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 - **Status Code**: `200 OK`
 
 ---
+
+
+### **/wallet/balance/:uns/:backing**
+
+- **Method**: `GET`
+- **Description**: checks the specific backed balance of a fiaton.
+
+- **Response**:
+    ```json
+    {
+      "metadata": {
+		"hash_token": "",
+		"is_hash_token_new": false,
+		"req_id": "",
+		"req_time": 0,
+		"stop_counter": 0
+	},
+	"status": "SUCCESS",
+	"error": "",
+	"data": {
+	  <updating soon>
+	}
+    }
+    ```
+
+- **Status Code**: `200 OK`
+
+---
+
+### **/wallet/swap**
+
+- **Method**: `POST`
+- **Description**: Used for swapping between fiatons backing.
+- **Request Body**:
+    ```json
+    {
+       	"uns":<string>,
+	      "amount":<int>,
+	      "base_currency":"NGN" <string>,
+	      "rebase_currency":"USD" <string>
+    }
+    ```
+- **Response**:
+    ```json
+  {
+  	"metadata": {
+  		"hash_token": "",
+  		"is_hash_token_new": false,
+  		"req_id": "",
+  		"req_time": 0,
+  		"stop_counter": 0
+  	},
+  	"status": "SUCCESS",
+  	"error": "",
+  	"data": {
+  	  <updating>
+  	}
+  }
+    ```
+
+- **Status Code**: `200 OK`
+
+---
+
+
 
 ## In-Chat Payments
 
