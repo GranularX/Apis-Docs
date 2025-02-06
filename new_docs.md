@@ -23,7 +23,8 @@ Welcome to the API documentation for GranularX. This documentation covers the va
 - **Request Body**:
     ```json
     {
-        "username": "<string>",
+        "username": "<string>; optional",
+        "email":"<string>;optional",
         "password": "<string>"
     }
     ```
@@ -148,8 +149,12 @@ Welcome to the API documentation for GranularX. This documentation covers the va
     ```json
     {
         "username": "<string>",
+        "position":"<string>",
+        "identifier":"<string>",
         "phone_number": "<string>",
-        "password": "<string>"
+        "email":"<string>",
+        "password": "<string>",
+        "pin":"<int>"
     }
     ```
 
@@ -158,7 +163,7 @@ Welcome to the API documentation for GranularX. This documentation covers the va
     {
         "status": "success",
         "error": "",
-        "data": "User successfully created"
+        "data": "User, wallet and mailbox successfully created"
     }
     ```
 - **Status Code**: `201 Created`
